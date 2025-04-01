@@ -7,7 +7,7 @@ const StoreContextProvider = (props) => {
   // state for add to cart functionality
   const [cartItems, setCartItems] = useState({});
   // backend url
-  const url = "http://localhost:4000";
+  const url = "https://restaurant-webapp-server.onrender.com";
   // for storing token in frontend
   const [token, setToken] = useState("");
   // for storing food_list from backend
