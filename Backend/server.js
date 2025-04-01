@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 // db coonection
-connectDB();
+connectDB(process.env.MONGO_URL);
 
 //api endpoints
 app.use("/api/food", foodRouter);
@@ -25,13 +25,6 @@ app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
-app.get("/", (req, res) => {
-    res.send("API Working");
-});
-
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 })
-
-//mongodb connection string
-// mongodb+srv://aditya_karn:<db_password>@cluster0.s1hwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
